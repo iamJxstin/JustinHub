@@ -59,8 +59,8 @@ function TPReturner()
             task.wait()
                 pcall(function()
                     writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
-                    task.wait()
-                    game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                    task.wait(cooldown)
+                    TeleportService:TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
                 end)
                 task.wait(4)
             end
@@ -89,7 +89,7 @@ if game.PlaceId == GameIDs.AFK then
     end
     Time = workspace.Time.Value
     if (Time <= wantedTime) then
-        task.delay((Time + 4), function()
+        task.delay((Time + 3), function()
             Teleport()
         end)
     end
