@@ -89,7 +89,7 @@ if game.PlaceId == GameIDs.AFK then
     end
     Time = workspace.Time.Value
     if (Time <= wantedTime) then
-        task.delay((Time + 2), function()
+        task.delay((Time + 3), function()
             Teleport()
         end)
     end
